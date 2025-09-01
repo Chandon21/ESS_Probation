@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Labs • Portfolio Hub</title>
+  <link rel="icon" href="assets/favicon.ico">
+  <meta name="description" content="Portfolio + Learning Hub">
+  <link rel="stylesheet" href="assets/style.css">
+  
+</head>
+<body>
+  <nav>
+    <div class="inner" role="navigation" aria-label="Main">
+      <a class="brand" href="index.html">Chandon • Hub</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+      <a href="media.html">Media</a>
+      <a href="graphics.html">Graphics</a>
+      <a href="labs.html">Labs</a>
+      <a href="data.html">Data/Layout</a>
+      <a href="extras.html">Extras</a>
+      <a href="references.html">References</a>
+      <button id="theme-light" class="btn" aria-label="Use light theme">Light</button>
+      <button id="theme-dark" class="btn" aria-label="Use dark theme">Dark</button>
+    </div>
+  </nav>
+  <main class="container">
+  
+<h1>Labs</h1>
+<section class="grid grid-3">
+  <div class="card">
+    <h3>Geolocation</h3>
+    <button id="geo" class="btn">Get Location</button>
+    <pre id="geo-out"></pre>
+    <small>Requires HTTPS and permission.</small>
+    <script>
+    geo.onclick = () => {
+      if(!navigator.geolocation){ geo-out.textContent = "Not supported"; return; }
+      navigator.geolocation.getCurrentPosition(
+        pos => geo-out.textContent = JSON.stringify(pos.coords, null, 2),
+        err => geo-out.textContent = err.message
+      );
+    };
+    </script>
+  </div>
+  <div class="card">
+    <h3>Drag & Drop</h3>
+    <div id="drag" draggable="true" class="btn" style="width:120px">Drag me</div>
+    <div id="drop" class="card" style="min-height:80px;margin-top:10px">Drop here</div>
+    <script>
+    drag.ondragstart = e => e.dataTransfer.setData('text/plain','Hello from DnD');
+    drop.ondragover = e => e.preventDefault();
+    drop.ondrop = e => { e.preventDefault(); drop.textContent = e.dataTransfer.getData('text/plain'); };
+    </script>
+  </div>
+  <div class="card">
+    <h3>Web Storage (Theme)</h3>
+    <p>Use the Light/Dark buttons in the navbar. It persists with <code>localStorage</code>.</p>
+  </div>
+  <div class="card">
+    <h3>Web Worker</h3>
+    <button id="wk" class="btn">Sum 1..5,000,000</button>
+    <pre id="wk-out"></pre>
+    <script>
+    wk.onclick = () => {
+      const w = new Worker('sum-worker.js');
+      w.onmessage = e => { wk-out.textContent = JSON.stringify(e.data, null, 2); w.terminate(); };
+      w.postMessage(5_000_000);
+    };
+    </script>
+  </div>
+  <div class="card">
+    <h3>SSE (Client)</h3>
+    <p>Needs a server endpoint <code>/events</code> that streams <code>text/event-stream</code>.</p>
+    <pre>const s = new EventSource('/events');
+s.onmessage = e =&gt; console.log(e.data);</pre>
+  </div>
+  <div class="card">
+    <h3>Iframe</h3>
+    <iframe src="about.html" title="Inline about" width="100%" height="160" loading="lazy"></iframe>
+  </div>
+</section>
+
+  </main>
+  <footer>© 2025 • Built with HTML, CSS & JS • <span class="tag">Accessible</span> <span class="tag">Responsive</span></footer>
+  <script src="assets/script.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,40 @@
+
+/* Minimal modern styles */
+:root{--max:1100px;--bg:#0b1220;--fg:#0f172a}
+*{box-sizing:border-box}
+html{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Helvetica Neue,Arial}
+body{margin:0;background:#f8fafc;color:var(--fg)}
+a{color:#2563eb;text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:var(--max);margin:0 auto;padding:24px 16px 80px}
+nav{position:sticky;top:0;z-index:50;background:white;border-bottom:1px solid #e2e8f0}
+nav .inner{display:flex;gap:10px;flex-wrap:wrap;align-items:center;max-width:var(--max);margin:0 auto;padding:10px 16px}
+.brand{font-weight:800;margin-right:auto}
+.badge{display:inline-block;padding:2px 8px;border-radius:12px;background:#e2e8f0;font-size:12px}
+.btn{display:inline-block;padding:10px 14px;border-radius:12px;border:1px solid #e2e8f0;background:white}
+.btn:hover{background:#eef2ff}
+.card{background:white;border:1px solid #e2e8f0;border-radius:16px;padding:16px;box-shadow:0 2px 6px rgba(0,0,0,0.05)}
+.grid{display:grid;gap:16px}
+.grid-3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+pre{background:#0b1020;color:#e2e8f0;padding:12px;border-radius:12px;overflow:auto}
+code{background:#0b1020;color:#e2e8f0;padding:2px 6px;border-radius:6px}
+table{width:100%;border-collapse:collapse}
+th,td{border:1px solid #e2e8f0;padding:8px;text-align:left}
+th{background:#f1f5f9}
+figure{margin:0}
+img{max-width:100%;height:auto}
+footer{padding:40px 16px;text-align:center;color:#475569}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:center}
+@media (max-width:800px){.hero{grid-template-columns:1fr}}
+fieldset{border:1px solid #e2e8f0;border-radius:12px;padding:12px}
+legend{padding:0 6px}
+input,select,textarea{padding:8px;border:1px solid #cbd5e1;border-radius:8px;width:100%}
+label{display:grid;gap:6px;margin-bottom:10px}
+kbd{border:1px solid #cbd5e1;border-bottom-width:2px;border-radius:6px;padding:2px 6px;background:#f1f5f9}
+.tag{display:inline-block;padding:2px 8px;background:#e2e8f0;border-radius:999px;margin-right:6px}
+.hl{background:#fef9c3}
+.light{}
+.dark{background:#0b1020;color:#e2e8f0}
+.dark nav{background:#0f172a;border-color:#1f2937}
+.dark .card{background:#0f172a;border-color:#1f2937}
+.dark a{color:#93c5fd}

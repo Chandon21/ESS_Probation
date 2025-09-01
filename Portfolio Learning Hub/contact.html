@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact • Portfolio Hub</title>
+  <link rel="icon" href="assets/favicon.ico">
+  <meta name="description" content="Portfolio + Learning Hub">
+  <link rel="stylesheet" href="assets/style.css">
+  
+</head>
+<body>
+  <nav>
+    <div class="inner" role="navigation" aria-label="Main">
+      <a class="brand" href="index.html">Chandon • Hub</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+      <a href="media.html">Media</a>
+      <a href="graphics.html">Graphics</a>
+      <a href="labs.html">Labs</a>
+      <a href="data.html">Data/Layout</a>
+      <a href="extras.html">Extras</a>
+      <a href="references.html">References</a>
+      <button id="theme-light" class="btn" aria-label="Use light theme">Light</button>
+      <button id="theme-dark" class="btn" aria-label="Use dark theme">Dark</button>
+    </div>
+  </nav>
+  <main class="container">
+  
+<h1>Contact</h1>
+<form class="card" id="contact-form" action="#" method="post" novalidate>
+  <fieldset>
+    <legend>Your Info</legend>
+    <label>Name <input name="name" required minlength="2" maxlength="50" placeholder="Your name"></label>
+    <label>Email <input type="email" name="email" required placeholder="you@example.com"></label>
+    <label>Phone <input type="tel" name="tel" pattern="\+?\d{8,15}" placeholder="+8801XXXXXXXXX"></label>
+  </fieldset>
+  <fieldset>
+    <legend>Project Details</legend>
+    <label>Website <input type="url" name="url" placeholder="https://"></label>
+    <label>Budget <input type="number" name="budget" min="0" max="100000" step="1000"></label>
+    <label>Start Date <input type="date" name="start"></label>
+    <label>Attach Brief <input type="file" name="brief" accept=".pdf,.docx"></label>
+    <label>Priority
+      <select name="priority">
+        <option>Normal</option>
+        <option>High</option>
+        <option>Urgent</option>
+      </select>
+    </label>
+    <label>Details <textarea name="details" rows="4"></textarea></label>
+    <label><input type="checkbox" name="agree" required> I agree to terms</label>
+    <div>
+      <label><input type="radio" name="contact_way" value="email" checked> Email</label>
+      <label><input type="radio" name="contact_way" value="phone"> Phone</label>
+    </div>
+    <label>Color theme <input type="color" name="favcolor" value="#2563eb"></label>
+    <label>Skill Range <input type="range" name="skill" min="0" max="10" value="5"></label>
+    <input type="hidden" name="formId" value="contact-001">
+  </fieldset>
+  <button class="btn">Send</button>
+</form>
+<details class="card"><summary>How we use your data</summary><p>We store only essential info. Read our policy.</p></details>
+<script>
+contact-form.addEventListener("submit",(e)=>{
+  e.preventDefault();
+  alert("Form captured (demo). Native HTML validations triggered.");
+});
+</script>
+
+  </main>
+  <footer>© 2025 • Built with HTML, CSS & JS • <span class="tag">Accessible</span> <span class="tag">Responsive</span></footer>
+  <script src="assets/script.js"></script>
+  
+</body>
+</html>

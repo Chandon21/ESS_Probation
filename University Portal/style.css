@@ -1,0 +1,22 @@
+
+:root{--bg:#f5f7fa;--card:#fff;--muted:#4b5563;--accent:#1d4ed8;--text:#111}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+header.site{background:#1e40af;color:#fff;position:sticky;top:0;z-index:30;padding:1rem 0}
+.container{max-width:1200px;margin:0 auto;padding:1rem}
+.site-nav{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.nav-links{display:flex;gap:.5rem;align-items:center}
+.nav-links a{padding:.5rem .7rem;border-radius:6px;background:rgba(255,255,255,0.1);color:#fff}
+.nav-links a:hover{background:rgba(255,255,255,0.2)}
+.hero{display:grid;grid-template-columns:1fr 300px;gap:1rem;align-items:center;margin-top:1rem}
+.card{background:var(--card);padding:1rem;border-radius:12px;box-shadow:0 2px 4px rgba(0,0,0,0.05)}
+img.profile-pic{width:150px;height:150px;border-radius:12px;object-fit:cover}
+footer{padding:1rem 0;color:var(--muted);font-size:.85rem;text-align:center;margin-top:2rem}
+table{width:100%;border-collapse:collapse}
+th,td{border:1px solid #ddd;padding:.5rem;text-align:left}
+form input,form select,form textarea{padding:.5rem;margin-top:.25rem;width:100%;border-radius:6px;border:1px solid #ccc}
+button{padding:.5rem 1rem;border:none;border-radius:8px;background:var(--accent);color:#fff;cursor:pointer}
+button:hover{background:#2563eb}
+progress,meter{width:100%;}

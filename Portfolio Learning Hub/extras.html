@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Extras • Portfolio Hub</title>
+  <link rel="icon" href="assets/favicon.ico">
+  <meta name="description" content="Portfolio + Learning Hub">
+  <link rel="stylesheet" href="assets/style.css">
+  
+</head>
+<body>
+  <nav>
+    <div class="inner" role="navigation" aria-label="Main">
+      <a class="brand" href="index.html">Chandon • Hub</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+      <a href="media.html">Media</a>
+      <a href="graphics.html">Graphics</a>
+      <a href="labs.html">Labs</a>
+      <a href="data.html">Data/Layout</a>
+      <a href="extras.html">Extras</a>
+      <a href="references.html">References</a>
+      <button id="theme-light" class="btn" aria-label="Use light theme">Light</button>
+      <button id="theme-dark" class="btn" aria-label="Use dark theme">Dark</button>
+    </div>
+  </nav>
+  <main class="container">
+  
+<h1>Extras</h1>
+<section class="grid grid-3">
+  <div class="card">
+    <h3>Entities / Symbols / Emojis</h3>
+    <p>&amp;lt; &amp;gt; &amp;amp; &copy; • ← ↑ → ↓ • 😀🔥🎯</p>
+  </div>
+  <div class="card">
+    <h3>Charsets</h3>
+    <p>UTF-8 via <code>&lt;meta charset="utf-8"&gt;</code></p>
+  </div>
+  <div class="card">
+    <h3>URL Encode</h3>
+    <label>Text <input id="u" placeholder="hello world!"></label>
+    <button id="enc" class="btn">Encode</button>
+    <p id="uo"></p>
+    <script>
+    enc.onclick = () => { uo.textContent = encodeURIComponent(u.value || ''); };
+    </script>
+  </div>
+</section>
+
+  </main>
+  <footer>© 2025 • Built with HTML, CSS & JS • <span class="tag">Accessible</span> <span class="tag">Responsive</span></footer>
+  <script src="assets/script.js"></script>
+  
+</body>
+</html>
