@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student List App</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        input, button { padding: 5px; margin: 5px; }
+        table { width: 60%; border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+        th { background-color: #f2f2f2; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+    </style>
+</head>
+<body>
+
+    <h2>Student List App</h2>
+
+    <input type="text" id="nameInput" placeholder="Student Name">
+    <input type="number" id="ageInput" placeholder="Age">
+    <input type="text" id="courseInput" placeholder="Course">
+    <button id="addBtn">Add Student</button>
+    <input type="text" id="searchInput" placeholder="Search by Name">
+
+    <table id="studentTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Course</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Student rows will appear here -->
+        </tbody>
+    </table>
+
+    <script>
+        const nameInput = document.getElementById("nameInput");
+        const ageInput = document.getElementById("ageInput");
+        const courseInput = document.getElementById("courseInput");
+        const addBtn = document.getElementById("addBtn");
+        const searchInput = document.getElementById("searchInput");
+        const studentTable = document.getElementById("studentTable").querySelector("tbody");
+
+        let students = [];
+
+        // Function to render student table
+        function renderTable(data) {
+            studentTable.innerHTML = ""; // clear table
+            data.forEach((student, index) => {
+                const row = document.createElement("tr");
+
+                row.innerHTML = `
+                    <td>${student.name}</td>
+                    <td>${student.age}</td>
+                    <td>${student.course}</td>
+                    <td>
+                        <button onclick="editStudent(${index})">Edit</button>
+                        <button onclick="deleteStudent(${index})">Delete</button>
+                    </td>
+                `;
+                studentTable.appendChild(row);
+            });
+        }
+
+        // Add student
+        addBtn.addEventListener("click", () => {
+            const name = nameInput.value.trim();
+            const age = ageInput.value.trim();
+            const course = courseInput.value.trim();
+
+            if (name && age && course) {
+                students.push({ name, age, course });
+                renderTable(students);
+
+                // Clear inputs
+                nameInput.value = "";
+                ageInput.value = "";
+                courseInput.value = "";
+            } else {
+                alert("Please fill all fields!");
+            }
+        });
+
+        // Edit student
+        function editStudent(index) {
+            const student = students[index];
+            nameInput.value = student.name;
+            ageInput.value = student.age;
+            courseInput.value = student.course;
+
+            addBtn.textContent = "Update Student";
+
+            addBtn.onclick = () => {
+                students[index] = {
+                    name: nameInput.value.trim(),
+                    age: ageInput.value.trim(),
+                    course: courseInput.value.trim()
+                };
+                renderTable(students);
+
+                nameInput.value = "";
+                ageInput.value = "";
+                courseInput.value = "";
+                addBtn.textContent = "Add Student";
+                addBtn.onclick = addStudentListener; // restore listener
+            };
+        }
+
+        // Delete student
+        function deleteStudent(index) {
+            if (confirm(`Are you sure you want to delete ${students[index].name}?`)) {
+                students.splice(index, 1);
+                renderTable(students);
+            }
+        }
+
+        // Search/filter students
+        searchInput.addEventListener("input", () => {
+            const query = searchInput.value.toLowerCase();
+            const filtered = students.filter(s => s.name.toLowerCase().includes(query));
+            renderTable(filtered);
+        });
+
+        // Save original add button listener
+        const addStudentListener = addBtn.onclick;
+    </script>
+</body>
+</html>
