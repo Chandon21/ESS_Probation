@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Full Practice</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    h1 { color: blue; }
+    button { margin: 5px; padding: 5px 10px; }
+    #list { margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h1 id="title">JavaScript Full Practice</h1>
+
+  <h2>Buttons</h2>
+  <button id="btnGreet">Greet</button>
+  <button id="btnArray">Show Fruits</button>
+  <button id="btnAddPara">Add Paragraph</button>
+
+  <div id="list"></div>
+
+  <script>
+    "use strict"; // Strict mode
+
+    // ===== 1. Data Types =====
+    let name = "Chandon";       // string
+    const country = "Bangladesh";// const string
+    let age = 22;                // number
+    let isStudent = true;        // boolean
+    let nothing = null;          // null
+    let notDefined;              // undefined
+    let bigNumber = 12345678901234567890n; // BigInt
+    let uniqueId = Symbol("id");           // Symbol
+
+    console.log(name, country, age, isStudent, nothing, notDefined, bigNumber, uniqueId);
+
+    // ===== 2. Functions =====
+    function greetUser(userName) { // regular function
+      return "Hello " + userName + "!";
+    }
+
+    const add = (a, b) => a + b;   // arrow function
+
+    function processUser(name, callback) { // callback function
+      callback(name);
+    }
+
+    // ===== 3. Arrays =====
+    let fruits = ["Apple", "Banana", "Mango", "Orange"];
+
+    // ===== 4. DOM & Events =====
+    const title = document.getElementById("title");
+    const btnGreet = document.getElementById("btnGreet");
+    const btnArray = document.getElementById("btnArray");
+    const btnAddPara = document.getElementById("btnAddPara");
+    const listDiv = document.getElementById("list");
+
+    // Change title
+    title.innerText = "Welcome to JavaScript Practice";
+
+    // Greet button
+    btnGreet.addEventListener("click", function() {
+      processUser(name, function(n) {
+        alert(greetUser(n)); // callback example
+      });
+    });
+
+    // Show fruits button
+    btnArray.addEventListener("click", function() {
+      listDiv.innerHTML = "<h3>Fruits List:</h3>";
+      fruits.forEach((fruit, index) => {
+        const p = document.createElement("p");
+        p.innerText = index + 1 + ". " + fruit;
+        listDiv.appendChild(p);
+      });
+    });
+
+    // Add paragraph button
+    btnAddPara.addEventListener("click", () => {
+      const p = document.createElement("p");
+      p.innerText = "This paragraph was added dynamically!";
+      p.style.color = "green";
+      listDiv.appendChild(p);
+    });
+
+    // ===== 5. Loops Example =====
+    console.log("Fruits with for loop:");
+    for (let i = 0; i < fruits.length; i++) {
+      console.log(fruits[i]);
+    }
+
+    console.log("Fruits with for...of loop:");
+    for (let fruit of fruits) {
+      console.log(fruit);
+    }
+
+  </script>
+</body>
+</html>
