@@ -21,7 +21,7 @@ const printReport = (studentName, marksArray) => {
 };
 
 // Test
-printReport("Purnima", [
+printReport("Chandon", [
   { subject: "Math", marks: 92 },
   { subject: "Physics", marks: 77 },
   { subject: "English", marks: 45 }

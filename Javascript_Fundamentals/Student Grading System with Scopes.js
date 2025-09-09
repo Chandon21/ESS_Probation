@@ -31,9 +31,9 @@ function studentDetails(name, age) {
     }
 
     console.log("Outside Block but inside Function:");
-    console.log(adultVar); // ✅ var is still accessible
-    // console.log(adultLet); ❌ Error
-    // console.log(adultConst); ❌ Error
+    console.log(adultVar); //  var is still accessible
+    // console.log(adultLet);  Error
+    // console.log(adultConst);  Error
 
     // ---------------- Lexical / Nested Scope ----------------
     function grades() {
@@ -52,11 +52,11 @@ function studentDetails(name, age) {
 studentDetails("Chandon", 24);
 
 console.log("\nOutside Function Scope:");
-// console.log(studentVar); ❌ Error
-// console.log(ageLet); ❌ Error
-// console.log(enrolledConst); ❌ Error
-// console.log(adultLet); ❌ Error
-// console.log(adultConst); ❌ Error
+// console.log(studentVar);  Error
+// console.log(ageLet);  Error
+// console.log(enrolledConst);  Error
+// console.log(adultLet);  Error
+// console.log(adultConst);  Error
 console.log("----------------------\n");
 
 // Global variables are still accessible

@@ -26,7 +26,7 @@ function printReport(studentName, marksArray) {
 }
 
 // Test
-printReport("Debi", [
+printReport("Chandon", [
   { subject: "Math", marks: 88 },
   { subject: "Physics", marks: 66 },
   { subject: "English", marks: 52 }

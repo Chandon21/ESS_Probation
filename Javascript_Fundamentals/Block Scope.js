@@ -11,7 +11,7 @@ if (true) {
 }
 
 console.log("Outside Block:");
-console.log(blockVar); // ✅ var leaks outside
-// console.log(blockLet); ❌ Error: let is block scoped
-// console.log(blockConst); ❌ Error: const is block scoped
+console.log(blockVar); //  var leaks outside
+// console.log(blockLet);  Error: let is block scoped
+// console.log(blockConst);  Error: const is block scoped
 console.log("----------------------\n");

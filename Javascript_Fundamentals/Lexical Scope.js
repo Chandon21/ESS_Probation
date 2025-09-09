@@ -5,13 +5,13 @@ function outerFunction() {
     function innerFunction() {
         let innerVar = "I am inner variable";
         console.log("Inside Inner Function:");
-        console.log(outerVar); // ✅ Accessible
-        console.log(innerVar); // ✅ Accessible
+        console.log(outerVar); //  Accessible
+        console.log(innerVar); //  Accessible
     }
 
     innerFunction();
 
-    // console.log(innerVar); ❌ Not accessible here
+    // console.log(innerVar);  Not accessible here
 }
 
 outerFunction();

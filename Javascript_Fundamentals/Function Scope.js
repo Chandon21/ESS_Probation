@@ -12,7 +12,7 @@ function functionScopeDemo() {
 
 functionScopeDemo();
 
-// console.log(functionVar); ❌ Not accessible outside
-// console.log(functionLet); ❌ Not accessible outside
-// console.log(functionConst); ❌ Not accessible outside
+// console.log(functionVar);  Not accessible outside
+// console.log(functionLet);  Not accessible outside
+// console.log(functionConst);  Not accessible outside
 console.log("----------------------\n");

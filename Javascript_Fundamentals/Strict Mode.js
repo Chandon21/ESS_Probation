@@ -25,7 +25,7 @@ console.log("With Strict Mode:");
 
 // 1. Variables must be declared
 try {
-    z = 20; // ❌ ReferenceError
+    z = 20; //  ReferenceError
 } catch (err) {
     console.log("Error:", err.message);
 }
@@ -33,14 +33,14 @@ try {
 // 2. Deleting variables or functions not allowed
 try {
     var a = 5;
-    delete a; // ❌ SyntaxError
+    delete a; //  SyntaxError
 } catch (err) {
     console.log("Error:", err.message);
 }
 
 // 3. Duplicate parameter names are not allowed
 try {
-    function multiply(x, x) { // ❌ SyntaxError
+    function multiply(x, x) { //  SyntaxError
         return x * x;
     }
 } catch (err) {
@@ -49,7 +49,7 @@ try {
 
 // 4. Prevents use of reserved keywords
 try {
-    let public = 123; // ❌ SyntaxError in strict mode
+    let public = 123; //  SyntaxError in strict mode
 } catch (err) {
     console.log("Error: Cannot use reserved keywords as variable names");
 }
@@ -58,7 +58,7 @@ try {
 const obj = {};
 Object.defineProperty(obj, "prop", { value: 10, writable: false });
 try {
-    obj.prop = 20; // ❌ TypeError in strict mode
+    obj.prop = 20; //  TypeError in strict mode
 } catch (err) {
     console.log("Error:", err.message);
 }
