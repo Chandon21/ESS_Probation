@@ -1,63 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bangladesh Train Ticket System</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BD Train Tickets — Home</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <!-- Navbar -->
+<body data-page="index">
   <nav class="navbar">
     <div class="logo">🚆 BD Train Tickets</div>
     <ul class="menu">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Schedule</a></li>
-      <li><a href="#">Tickets</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="stations.html">Stations & Fare</a></li>
     </ul>
   </nav>
 
-  <header>
-    <h1>Book Your Train Ticket Easily</h1>
-    <p>Safe • Fast • Reliable</p>
+  <header class="hero">
+    <h1>Book Train Tickets in Bangladesh</h1>
+    <p>Fast. Simple. Secure.</p>
+
+    <div class="search-card">
+      <h3>Quick Search</h3>
+      <div class="row">
+        <select id="origin-select" class="select"></select>
+        <select id="destination-select" class="select"></select>
+      </div>
+      <div class="row">
+        <input id="journey-date" type="date" />
+        <input id="journey-time" type="time" />
+      </div>
+      <div class="row">
+        <button id="find-trains-btn" class="btn primary">Find Trains</button>
+        <a href="schedule.html" class="btn ghost">View Full Schedule</a>
+      </div>
+    </div>
   </header>
 
-  <!-- Step 1: Date & Time Selection -->
-  <section class="booking-section">
-    <h2>Step 1: Select Date & Time</h2>
-    <input type="date" id="journey-date" min="">
-    <input type="time" id="journey-time">
-  </section>
-
-  <!-- Step 2: Seat Selection -->
-  <section class="booking-section">
-    <h2>Step 2: Choose Your Seat (৳500 per seat)</h2>
-    <div class="seat-layout" id="seat-layout"></div>
-    <p id="timer-message"></p>
-    <h3>Total Price: <span id="total-price">৳0</span></h3>
-  </section>
-
-  <!-- Step 3: Payment -->
-  <section class="booking-section">
-    <h2>Step 3: Payment</h2>
-    <select id="payment-method">
-      <option value="">Select Payment Method</option>
-      <option value="bkash">bKash</option>
-      <option value="nagad">Nagad</option>
-      <option value="card">Bank Card (Visa/Master)</option>
-    </select>
-    <button id="confirm-payment">Confirm Payment</button>
-  </section>
-
-  <!-- Confirmation -->
-  <section class="confirmation" id="confirmation">
-    <h2>🎉 Ticket Confirmed!</h2>
-    <p id="ticket-details"></p>
-  </section>
+  <main class="container">
+    <section class="info-cards">
+      <div class="card">
+        <h4>Reliable Trains</h4>
+        <p>Sample schedule with seat booking demo.</p>
+      </div>
+      <div class="card">
+        <h4>Multiple Payment Options</h4>
+        <p>bKash, Nagad, Card (demo / mockup).</p>
+      </div>
+      <div class="card">
+        <h4>Seat Hold</h4>
+        <p>Select seats — you have 2 minutes to confirm payment.</p>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>© 2025 BD Train Tickets. All Rights Reserved.</p>
+    <p>© 2025 BD Train Tickets</p>
   </footer>
 
   <script src="script.js"></script>

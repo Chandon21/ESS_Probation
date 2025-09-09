@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Stations & Fare — BD Train Tickets</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="stations">
+  <nav class="navbar">
+    <div class="logo">🚆 BD Train Tickets</div>
+    <ul class="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="stations.html">Stations & Fare</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <section class="booking-section">
+      <h2>Stations</h2>
+      <table id="stations-table" class="stations-table">
+        <thead><tr><th>#</th><th>Code</th><th>Station</th><th>Km (demo)</th></tr></thead>
+        <tbody></tbody>
+      </table>
+
+      <h3>Fare Calculator (demo values)</h3>
+      <div class="row">
+        <select id="fare-origin" class="select"></select>
+        <select id="fare-destination" class="select"></select>
+        <select id="fare-class" class="select">
+          <option value="shovon">Shovon</option>
+          <option value="ac">AC</option>
+          <option value="first">First Class</option>
+        </select>
+        <button id="calc-fare" class="btn primary">Calculate Fare</button>
+      </div>
+
+      <p id="fare-result" style="margin-top:12px;font-weight:600;"></p>
+
+      <p style="margin-top:10px;color:#666;font-size:0.9rem;">
+        Note: Station kilometres and fares are demo/sample values for this project. Replace with official data when ready.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 BD Train Tickets</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

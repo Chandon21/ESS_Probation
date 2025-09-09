@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Schedule — BD Train Tickets</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="schedule">
+  <nav class="navbar">
+    <div class="logo">🚆 BD Train Tickets</div>
+    <ul class="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="stations.html">Stations & Fare</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header">
+    <h2>Find Trains</h2>
+    <p>Choose origin, destination and date</p>
+
+    <div class="search-inline">
+      <select id="origin-select" class="select"></select>
+      <select id="destination-select" class="select"></select>
+      <input id="journey-date" type="date" />
+      <button id="search-btn" class="btn primary">Search</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="train-results" class="train-results">
+      <!-- JS renders train cards here -->
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 BD Train Tickets</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
