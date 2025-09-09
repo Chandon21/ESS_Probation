@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Train — BD Train Tickets</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="train">
+  <nav class="navbar">
+    <div class="logo">🚆 BD Train Tickets</div>
+    <ul class="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="stations.html">Stations & Fare</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <section class="booking-section">
+      <div id="train-info" class="train-info">
+        <!-- JS renders train name, number, route -->
+      </div>
+
+      <h3>Seat Selection (Hold for 2 minutes)</h3>
+      <div id="seat-layout" class="seat-layout"></div>
+      <p id="timer-message" class="timer-message"></p>
+
+      <div class="booking-summary">
+        <p>Selected seats: <span id="selected-count">0</span></p>
+        <p>Total: <strong id="total-price">৳0</strong></p>
+      </div>
+
+      <h3>Payment</h3>
+      <select id="payment-method">
+        <option value="">Select Payment Method</option>
+        <option value="bkash">bKash</option>
+        <option value="nagad">Nagad</option>
+        <option value="card">Bank Card</option>
+      </select>
+
+      <div id="payment-details" class="payment-details"></div>
+
+      <div class="row">
+        <button id="confirm-payment" class="btn primary">Confirm Payment</button>
+        <a id="back-schedule" class="btn ghost" href="schedule.html">Back to Schedule</a>
+      </div>
+
+      <div id="confirmation" class="confirmation" style="display:none;"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 BD Train Tickets</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
