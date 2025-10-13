@@ -1,0 +1,22 @@
+.white-text {
+  color: white;
+}
+
+.assignment3-container {
+  margin: 20px;
+}
+
+button {
+  padding: 8px 12px;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  padding: 5px;
+  margin-bottom: 3px;
+}

@@ -1,0 +1,17 @@
+<<div class="assignment3-container">
+  <!-- Button -->
+  <button (click)="toggleDetails()">Display Details</button>
+
+  <!-- Paragraph -->
+  <p *ngIf="showDetails">Secret Password = tuna</p>
+
+  <!-- Logs -->
+  <h3>Button Click Logs:</h3>
+  <ul>
+    <li *ngFor="let log of logs; let i = index"
+        [ngStyle]="isBlue(i) ? {'background-color':'blue'} : {}"
+        [ngClass]="isBlue(i) ? 'white-text' : ''">
+      Click #{{log}}
+    </li>
+  </ul>
+</div>
