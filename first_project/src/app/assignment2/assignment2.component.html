@@ -1,0 +1,20 @@
+<div style="margin: 20px;">
+  <!-- Input field with two-way binding -->
+  <input 
+    type="text" 
+    [(ngModel)]="username" 
+    placeholder="Enter username"
+  />
+
+  <!-- Display username -->
+  <p>Your username: {{ username }}</p>
+
+  <!-- Button disabled when username is empty -->
+  <button 
+    [disabled]="username.trim() === ''" 
+    (click)="resetUsername()"
+  >
+    Reset Username
+  </button>
+</div>
+
